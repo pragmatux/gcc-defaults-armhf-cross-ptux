@@ -1,12 +1,42 @@
 Source: gcc-defaults-armhf-cross-ptux
-Section: unknown
+Section: devel
 Priority: extra
 Maintainer: Ryan Kuester <rkuester@insymbols.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
 
-Package: gcc-defaults-armhf-cross-ptux
+Package: cpp-arm-linux-gnueabihf-default-4.7
+Provides: cpp-arm-linux-gnueabihf-default
+Conflicts: cpp-arm-linux-gnueabihf-default
 Architecture: all
-Depends: ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: 
+ cpp-4.7-arm-linux-gnueabihf,
+ ${misc:Depends}
+Description: cpp-arm-linux-gnueabihf-4.7 as default
+ This package sets cpp-arm-linux-gnueabihf-4.7 as the default by
+ providing the symlink cpp-arm-linux-gnueabihf.
+
+Package: gcc-arm-linux-gnueabihf-default-4.7
+Provides: gcc-arm-linux-gnueabihf-default
+Conflicts: gcc-arm-linux-gnueabihf-default
+Architecture: all
+Depends: 
+ cpp-arm-linux-gnueabihf-default-4.7,
+ gcc-4.7-arm-linux-gnueabihf,
+ ${misc:Depends}
+Description: gcc-arm-linux-gnueabihf-4.7 as default
+ This package sets gcc-arm-linux-gnueabihf-4.7 as the default by
+ providing the symlink gcc-arm-linux-gnueabihf.
+
+Package: g++-arm-linux-gnueabihf-default-4.7
+Provides: g++-arm-linux-gnueabihf-default
+Conflicts: g++-arm-linux-gnueabihf-default
+Architecture: all
+Depends: 
+ cpp-arm-linux-gnueabihf-default-4.7,
+ gcc-arm-linux-gnueabihf-default-4.7,
+ g++-4.7-arm-linux-gnueabihf,
+ ${misc:Depends}
+Description: g++-arm-linux-gnueabihf-4.7 as default
+ This package sets g++-arm-linux-gnueabihf-4.7 as the default by
+ providing the symlink g++-arm-linux-gnueabihf.
